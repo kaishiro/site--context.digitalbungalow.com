@@ -1,0 +1,49 @@
+area {
+}
+
+audio {
+  @extend %reset-block;
+}
+
+canvas {
+  @extend %reset-block;
+}
+
+embed {
+  @extend %reset-block;
+}
+
+figure {
+  @extend %reset-block;
+  @extend %reset-margin;
+
+  figcaption {
+    @extend %reset-block;
+  }
+}
+
+hr {
+  @extend %reset-margin;
+}
+
+iframe {
+  @extend %reset-block;
+  @extend %reset-border;
+}
+
+img {
+}
+
+map {
+  
+  area {
+  }
+}
+
+object {
+  @extend %reset-block;
+}
+
+video {
+  @extend %reset-block;
+}

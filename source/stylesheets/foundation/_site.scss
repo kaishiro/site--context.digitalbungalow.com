@@ -1,0 +1,20 @@
+/*
+*
+*  Global Border-Box Override
+*
+*  Unnecessary if Bourbon/Neat already being loaded.
+*
+*  * {
+*    @include box-sizing(border-box);
+*  }
+*
+*/
+
+html {
+  @extend %font-sans-serif-light;
+}
+
+body {
+  @extend %reset-margin;
+  width:100%;
+}

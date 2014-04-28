@@ -1,0 +1,15 @@
+form {
+
+  fieldset {
+    @extend %reset-margin;
+    @extend %reset-padding;
+    @extend %reset-border;
+
+    legend {
+      @extend %reset-padding;
+    }
+  }
+
+  keygen {
+  }
+}

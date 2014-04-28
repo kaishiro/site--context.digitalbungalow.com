@@ -1,0 +1,80 @@
+// Font Families
+%font-family-sans-serif {
+  font-family: 'Open Sans', sans-serif;
+}
+
+%font-family-serif {
+  font-family: 'Times New Roman', serif;
+}
+
+// Font Weights
+%font-weight-light {
+  font-weight: 300;
+}
+
+%font-weight-regular {
+  font-weight: 400;
+}
+
+%font-weight-bold {
+  font-weight: 600;
+}
+
+%font-weight-super-bold {
+  font-weight: 800;
+}
+
+// Font Styles
+%font-style-normal {
+  font-style: normal;
+}
+
+%font-style-italic {
+  font-style: italic;
+}
+
+// Font Placeholders
+%font-sans-serif-light {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-light;
+}
+
+%font-sans-serif-regular {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-regular;
+}
+
+%font-sans-serif-bold {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-bold;
+}
+
+%font-sans-serif-super-bold {
+  @extend %font-family-sans-serif;
+  @extend %font-weight-super-bold;
+}
+
+%font-serif-light {
+  @extend %font-family-serif;
+  @extend %font-weight-light;
+}
+
+%font-serif-regular {
+  @extend %font-family-serif;
+  @extend %font-weight-regular;
+}
+
+%font-serif-bold {
+  @extend %font-family-serif;
+  @extend %font-weight-bold;
+}
+
+%font-serif-super-bold {
+  @extend %font-family-serif;
+  @extend %font-weight-super-bold;
+}
+
+$base-font-size:1em;
+$base-font-size-px-mobile:16px;
+$base-font-size-px-tablet:18px;
+$base-font-size-px-desktop:20px;

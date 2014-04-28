@@ -1,0 +1,16 @@
+@import "neat/neat-helpers";
+
+// Device-specific Widths
+$width-mobile-max: em(500, 16);
+$width-tablet: em(750, 16);
+$width-tablet-max: em(750, 16);
+$width-desktop: em(975, 16);
+$width-desktop-max: em(950, 20);
+
+// Max-width Setting for Neat's outer-container() mixin
+$max-width: $width-mobile-max;
+
+// Breakpoints for Neat's media() mixin
+$mobile: new-breakpoint(max-width $width-tablet 4);
+$tablet: new-breakpoint(min-width $width-tablet 12);
+$desktop: new-breakpoint(min-width $width-desktop 12);

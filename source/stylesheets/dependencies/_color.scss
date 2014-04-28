@@ -1,0 +1,10 @@
+// Colors
+$color-black: #000000;
+$color-white: #FFFFFF;
+$color-blue: #0000FF;
+
+// Colors: Semantic
+$color-text: $color-black;
+$color-text-invert: $color-white;
+$color-text-link: $color-blue;
+$color-text-link-hover: darken($color-text-link, 10%);

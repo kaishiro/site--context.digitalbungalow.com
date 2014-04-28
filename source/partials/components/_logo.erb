@@ -1,0 +1,9 @@
+<div class="logo">
+  <% if current_page.url == '/' %>
+    <h1 class="logo__heading">Middleman</h1>
+  <% else %>
+    <% link_to '/', :class => 'logo__heading' do %>
+      Middleman
+    <% end %>
+  <% end %>
+</div>

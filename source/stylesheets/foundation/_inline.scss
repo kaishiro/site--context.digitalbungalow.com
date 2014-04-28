@@ -1,0 +1,110 @@
+a {
+  text-decoration: none;
+  color: $color-text-link;
+
+  &:active {
+    outline: 0;
+  }
+
+  @include media($desktop) {
+    &:hover {
+      color: $color-text-link-hover;
+    }
+  }
+}
+
+abbr {
+}
+
+b {
+}
+
+bdi {
+}
+
+bdo {
+}
+
+cite {
+  @extend %reset-font-style;
+}
+
+code {
+}
+
+del {
+}
+
+dfn {
+  @extend %reset-font-style;
+}
+
+em {
+  @extend %reset-font-style;
+}
+
+i {
+  @extend %reset-font-style;
+}
+
+ins {
+}
+
+kbd {
+}
+
+mark {
+}
+
+meter {
+}
+
+output {
+}
+
+progress {
+}
+
+q {
+  @extend %reset-quotes;
+}
+
+ruby {
+
+  rp {
+  }
+
+  rt {
+  }
+}
+
+s {
+}
+
+samp {
+}
+
+small {
+}
+
+span {
+}
+
+strong {
+}
+
+sub {
+}
+
+sup {
+}
+
+time {
+}
+
+u {
+}
+
+var {
+  @extend %reset-font-style;
+}

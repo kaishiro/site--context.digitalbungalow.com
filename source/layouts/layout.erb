@@ -1,0 +1,36 @@
+<!doctype html>
+
+<%= partial "partials/html" %>
+
+  <head>
+    <meta charset="utf-8">
+
+    <title><%= page_title %></title>
+
+    <%= partial "partials/head/meta" %>
+    <%= partial "partials/head/css" %>
+    <%= partial "partials/head/js" %>
+    <%= partial "partials/head/link" %>
+  </head>
+  
+  <body class="page <%= page_classes %>">
+
+    <header class="header" role="banner">
+
+      <%= partial "partials/components/logo" %>
+
+      <%= partial "partials/components/toggle--navigation" %>
+
+      <%= partial "partials/components/navigation--primary" %>
+
+    </header>
+
+    <%= yield %>
+
+    <footer class="footer">
+    </footer>
+
+    <%= partial "partials/foot/js" %>
+
+  </body>
+</html>

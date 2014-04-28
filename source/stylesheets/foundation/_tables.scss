@@ -1,0 +1,25 @@
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  caption {
+  }
+  colgroup {
+    col {
+    }
+  }
+  thead {
+    th {
+      @extend %reset-padding;
+    }
+  }
+  tbody {
+    td {
+      @extend %reset-padding;
+    }
+  }
+  tfoot {
+    td {
+      @extend %reset-padding;
+    }
+  }
+}

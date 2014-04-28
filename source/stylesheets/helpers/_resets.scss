@@ -1,0 +1,37 @@
+%reset-block {
+  display:block;
+}
+
+%reset-font-style {
+  font-style:normal;
+}
+
+%reset-margin {
+  margin: 0;
+}
+
+%reset-padding {
+  padding: 0;
+}
+
+%reset-border {
+  border: 0;
+}
+
+%reset-list {
+  list-style: none;
+}
+
+%reset-quotes {
+  quotes: none;
+}
+
+%reset-content {
+  content: '';
+  content: none;
+}
+
+%reset-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}

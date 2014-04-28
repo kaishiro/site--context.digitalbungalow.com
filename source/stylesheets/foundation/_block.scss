@@ -1,0 +1,73 @@
+address {
+  @extend %reset-font-style;
+}
+
+article {
+  @extend %reset-block;
+}
+
+aside {
+  @extend %reset-block;
+}
+
+blockquote {
+  @extend %reset-margin;
+}
+
+details {
+  @extend %reset-block;
+}
+
+dialog {
+  @extend %reset-margin;
+  @extend %reset-padding;
+  @extend %reset-border;
+
+  summary {
+  }
+}
+
+div {
+}
+
+dl {
+  @extend %reset-margin;
+
+  dt {
+  }
+
+  dd {
+    @extend %reset-margin;
+  }
+}
+
+footer {
+  @extend %reset-block;
+}
+
+header {
+  @extend %reset-block;
+}
+
+menu {
+  @extend %reset-block;
+  @extend %reset-margin;
+  @extend %reset-padding;
+}
+
+nav {
+  @extend %reset-block;
+}
+
+p {
+  @extend %reset-margin;
+}
+
+pre {
+  @extend %reset-margin;
+}
+
+section {
+  @extend %reset-block;
+}
+

@@ -1,0 +1,20 @@
+ul {
+  @extend %reset-list;
+  @extend %reset-margin;
+  @extend %reset-padding;
+
+  li {
+    @extend %reset-list;
+  }
+}
+
+ol {
+  @extend %reset-list;
+  @extend %reset-margin;
+  @extend %reset-padding;
+
+  li {
+    @extend %reset-list;
+  }
+}
+
