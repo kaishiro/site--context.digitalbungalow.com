@@ -1,0 +1,17 @@
+.main {
+  @include transition(all 1s ease-in);
+  position:relative;
+  float:left;
+  width:100%;
+  padding:5%;
+  border:1px solid blue;
+  margin-left:0;
+  z-index:1;
+}
+
+// Page States
+.page--active-nav {
+  .main {
+    margin-right:-100%;
+  }
+}

@@ -7,30 +7,26 @@
 
     <title><%= page_title %></title>
 
-    <%= partial "partials/head/meta" %>
-    <%= partial "partials/head/css" %>
+    <%= partial "partials/meta" %>
+    <%= partial "partials/css" %>
     <%= partial "partials/head/js" %>
-    <%= partial "partials/head/link" %>
+    <%= partial "partials/link" %>
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://dimplejs.org/dist/dimple.v1.1.5.min.js"></script>
   </head>
   
   <body class="page <%= page_classes %>">
 
     <header class="header" role="banner">
-
-      <%= partial "partials/components/logo" %>
-
-      <%= partial "partials/components/toggle--navigation" %>
-
-      <%= partial "partials/components/navigation--primary" %>
-
     </header>
 
-    <%= yield %>
+    <main class="main" role="main">
+      <%= yield %>
+    </main>
 
     <footer class="footer">
     </footer>
 
     <%= partial "partials/foot/js" %>
-
   </body>
 </html>

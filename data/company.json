@@ -1,0 +1,189 @@
+{
+  "locations": [
+    {
+      "location": "Salem, MA",
+      "employees": [
+        {
+          "name": "Nate Wolfson",
+          "email": "nwolfson@digitalbungalow.com",
+          "department": "CEO",
+          "head": true,
+          "goal": 0
+        },
+        {
+          "name": "Nathanael Dewhurst",
+          "email": "ndewhurst@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 43
+        },
+        {
+          "name": "Matthew White",
+          "email": "mwhite@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 22
+        },
+        {
+          "name": "Andrew Wardwell",
+          "email": "awardwell@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 48
+        },
+        {
+          "name": "Erin McLaughlin",
+          "email": "emclaughlin@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 48
+        },
+        {
+          "name": "Jarrod Lytle",
+          "email": "jlytle@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 43
+        },
+        {
+          "name": "Jesse Day",
+          "email": "jday@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 43
+        },
+        {
+          "name": "Jeff Zaccagnini",
+          "email": "jzaccagnini@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 48
+        },
+        {
+          "name": "Abdullah Daoud",
+          "email": "adaoud@digitalbungalow.com",
+          "department": "Development",
+          "head": true,
+          "goal": 0
+        },
+        {
+          "name": "Erin Hegarty",
+          "email": "ehegarty@digitalbungalow.com",
+          "department": "Sales & Accounts",
+          "head": true,
+          "goal": 0
+        },
+        {
+          "name": "Kate Maxwell",
+          "email": "kmaxwell@digitalbungalow.com",
+          "department": "Sales & Accounts",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Jim Leonard",
+          "email": "jleonard@digitalbungalow.com",
+          "department": "Creative",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Jesse Vuona",
+          "email": "jvuona@digitalbungalow.com",
+          "department": "Creative",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Sean Cunningham",
+          "email": "scunningham@digitalbungalow.com",
+          "department": "Creative",
+          "head": true,
+          "goal": 0
+        },
+        {
+          "name": "Ashley Lojko",
+          "email": "alojko@digitalbungalow.com",
+          "department": "Marketing & Analytics",
+          "head": true,
+          "goal": 0
+        },
+        {
+          "name": "Casey Arnold",
+          "email": "carnold@digitalbungalow.com",
+          "department": "Marketing & Analytics",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Nick Goodman",
+          "email": "ngoodman@digitalbungalow.com",
+          "department": "Marketing & Analytics",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Anne Carney",
+          "email": "acarney@digitalbungalow.com",
+          "department": "Project Management",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Alec Schidlovsky",
+          "email": "aschidlovsky@digitalbungalow.com",
+          "department": "Project Management",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Emily Greenwood",
+          "email": "egreenwood@digitalbungalow.com",
+          "department": "Project Management",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Kate Cotter",
+          "email": "kcotter@digitalbungalow.com",
+          "department": "Project Management",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Michela Deck",
+          "email": "mdeck@digitalbungalow.com",
+          "department": "Project Management",
+          "head": false,
+          "goal": 0
+        },
+        {
+          "name": "Stacey Forman",
+          "email": "sforman@digitalbungalow.com",
+          "department": "Project Management",
+          "head": true,
+          "goal": 0
+        }
+      ]
+    },
+    {
+      "location": "Amman, Jordan",
+      "employees": [
+        {
+          "name": "Issa Haddadin",
+          "email": "i.haddadin@vardot.com",
+          "department": "Development",
+          "head": false,
+          "goal": 48
+        },
+        {
+          "name": "Ma'moun Othman",
+          "email": "m.othman@vardot.com",
+          "department": "Development",
+          "head": false,
+          "goal": 48
+        }
+      ]
+    }
+  ]
+}

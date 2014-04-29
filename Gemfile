@@ -27,3 +27,9 @@ gem "puma", "2.8.2"
 
 # Redcarpet - Alternative markdown processor 
 gem "redcarpet", "3.1.1"
+
+gem "jiralicious"
+
+gem "wunderground"
+
+gem "tzinfo"

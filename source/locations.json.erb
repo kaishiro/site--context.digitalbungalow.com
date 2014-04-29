@@ -1,0 +1,19 @@
+<%
+
+  locations = []
+
+  data.weather.each do |location|
+
+    location = {
+      :city => location["current_observation"]["display_location"]["city"],
+      :timezone => location["current_observation"]["local_tz_offset"],
+      :timezone_long => location["current_observation"]["local_tz_long"]
+    }
+
+    locations << location
+
+  end
+
+%>
+
+<%= locations.to_json %>

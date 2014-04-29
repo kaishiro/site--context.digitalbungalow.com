@@ -1,10 +1,15 @@
 // Colors
 $color-black: #000000;
 $color-white: #FFFFFF;
-$color-blue: #0000FF;
+
+$color-yellow: #E0DC3A;
+$color-jetstream: #C6D5CD;
+$color-mineralgreen: #5A6A62;
+$color-danube: #008BBA;
+$color-crimson: #DC403B;
 
 // Colors: Semantic
-$color-text: $color-black;
+$color-text: $color-mineralgreen;
 $color-text-invert: $color-white;
-$color-text-link: $color-blue;
+$color-text-link: #C43331;
 $color-text-link-hover: darken($color-text-link, 10%);

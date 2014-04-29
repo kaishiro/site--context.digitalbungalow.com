@@ -1,4 +1,141 @@
----
-layout: layout--default
----
+<!-- Locations -->
+<section class="section section--locations">
 
+  <! Loop through locations hash >
+  <% locations.each do |index, location| %>
+
+  <div class="location location--<%= location[:city].downcase %>">
+
+    <time class="location__time"><%= location[:time] %></time>
+
+    <h3 class="location__name">
+      <%= location[:city] %><em><%= location[:country] %></em>
+    </h3>
+
+    <div class="location__weather">
+
+      <time class="location__date"><%= location[:date] %></time>
+      
+      <div class="location__temperature"><%= location[:temperature] %></div>
+
+      <div class="location__icon location__icon--<%= location[:icon] %> wi-<%= location[:icon] %>">
+      </div>
+
+      <ul class="location__forecast forecast">
+
+        <! Loop through location-specific forecast hash >
+        <% location[:forecast].each do |index, forecast| %>
+          <li class="forecast__day">
+
+            <time class="forecast__date"><%= forecast[:date].in_time_zone(location[:timezone_long]).strftime('%-m/%-d') %></time>
+
+            <div class="forecast__icon forecast__icon--<%= forecast[:icon] %> wi-day-<%= forecast[:icon] %>">
+            </div>
+
+          </li>
+        <% end %>
+
+      </ul>
+
+    </div>
+
+    <div class="location__employees listing listing--employees">
+
+      <h4 class="listing__heading">Employees</h4>
+
+      <ul class="listing__list">
+
+        <! Loop through location-specific employee hash >
+        <% location[:employees].each do |index, employee| %>
+
+          <li class="listing__item employee">
+
+            <img class="employee__image" src="<%= gravatar_url(employee[:email]) %>" />
+
+            <span class="employee__name"><%= employee[:name] %></span>
+
+            <span class="employee__department"><%= abbreviate(employee[:department]) %></span>
+
+            <span class="employee__glyph"><%= ( employee[:head] ? '+' : '' ) %></span>
+          </li>
+
+        <% end %>
+
+      </ul>
+
+    </div>
+  </div>
+  <% end %>
+
+</section>
+
+<section class="section section--progress">
+
+  <div class="progress">
+    <h2 class="progress__header">Quarterly<em>Progress</em></h2>
+    <div class="progress__quarter">
+      <table>
+        <tr>
+          <td>
+            <ul class="days">
+            <% for i in 1..quarter[:total_days] do %>
+              <% if (i + quarter[:elapsed_days]) < Time.now.yday %>
+                <li class="days__day days__day--past"></li>
+              <% elsif (i + quarter[:elapsed_days]) == Time.now.yday %>
+                <li class="days__day days__day--current">
+                  <span><%= Time.now.strftime("%B %-d") %></span>
+                </li>
+              <% else %>
+                <li class="days__day"></li>
+              <% end %>
+            <% end %>
+            </ul>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <div class="progress__bricks">
+              <div class="progress-bar">
+                <div class="progress-bar__fill" style="width:<%= totals_prep[:progress].round(2) %>%">
+                  <span><%= totals_prep[:progress].round(2) %>%</span>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+  </div>
+
+</section>
+
+<section class="section section--employees">
+  <% employees.each do |index, employee| %>
+    <div class="chart chart--employee">
+      <div class="chart__progress chart__progress--bar" style="width:<%= (employee[:totalbricks] / employee[:goal]) * 100 %>%;">
+        <div class="chart__progress chart__progress--value">
+          <%= ((employee[:totalbricks] / employee[:goal]) * 100).round(2) %>%
+        </div>
+      </div>
+      <h2 class="chart__heading"><%= employee[:name].split.first %><em><%= employee[:name].split.last %></em></h2>
+      <h3 class="chart__metric"><%= "%g" % employee[:totalbricks] %><span>bricks</span>
+      </h3>
+      <div class="chart__graph chart__graph--<%= employee[:username] %>"></div>
+
+     <script type="text/javascript">
+        var svg = dimple.newSvg(".chart__graph--<%= employee[:username] %>");
+        var data = <%= (employee[:bricks].concat(quarter[:placeholder])).to_json.to_s %>;
+        var chart = new dimple.chart(svg, data);
+        chart.addCategoryAxis("x", "date");
+        var bricks = chart.addMeasureAxis("y", "bricks");
+        bricks.overrideMin = 0;
+        bricks.overrideMax = 10;
+
+        chart.addSeries(null, dimple.plot.bar);
+
+        chart.draw();
+      </script>
+    </div>
+  <% end %>
+</section>
