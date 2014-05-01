@@ -126,6 +126,7 @@ set :employees, employees_prep
 
 set :totals, totals_prep
 
+
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = ENV['S3_BUCKET']
   s3_sync.region                     = ENV['S3_REGION']
@@ -139,3 +140,5 @@ activate :s3_sync do |s3_sync|
   s3_sync.acl                        = 'public-read'
   s3_sync.encryption                 = false 
 end
+
+caching_policy 'text/html', max_age: 0, must_revalidate: true
