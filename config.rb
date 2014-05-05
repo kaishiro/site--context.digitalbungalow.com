@@ -114,18 +114,11 @@ configure :build do
   File.open("./data/weather.json", 'w') do |file|
     file.puts weather_json
   end
+
 end
 
-helpers CustomHelpers
 
-set :locations, locations_prep
-
-set :quarter, quarter_prep
-
-set :employees, employees_prep
-
-set :totals, totals_prep
-
+  helpers CustomHelpers
 
 activate :s3_sync do |s3_sync|
   s3_sync.bucket                     = ENV['S3_BUCKET']
