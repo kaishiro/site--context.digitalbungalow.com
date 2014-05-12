@@ -261,6 +261,16 @@ html {
       bottom:-.75em;
     }
   }
+  &.chart--wide {
+    @include span-columns(4);
+    padding:0;
+    .chart__graph {
+      top:5px;
+      left:10px;
+      bottom:auto;
+      height:125px;
+    }
+  }
 }
 
 
@@ -274,9 +284,18 @@ html {
   }
 }
 
-svg {
+.chart--employee svg {
   .gridlines, .axis {
     display:none;
   }
 }
 
+.chart--projects svg {
+  height:125px;
+  .gridlines {
+    display:none;
+  }
+  .axis {
+    font-size:em(9);
+  }
+}

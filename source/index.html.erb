@@ -2,6 +2,7 @@
 <% locations = locations_prep %>
 <% employees = employees_prep %>
 <% totals = totals_prep %>
+<% projects = projects_prep %>
 
 
 <!-- Locations -->
@@ -131,7 +132,7 @@
 
      <script type="text/javascript">
         var svg = dimple.newSvg(".chart__graph--<%= employee[:username] %>");
-        var data = <%= (employee[:bricks].concat(quarter[:placeholder])).to_json.to_s %>;
+        var data = <%= (employee[:bricks_by_day].concat(quarter[:placeholder])).to_json.to_s %>;
         var chart = new dimple.chart(svg, data);
         chart.addCategoryAxis("x", "date");
         var bricks = chart.addMeasureAxis("y", "bricks");
@@ -144,4 +145,30 @@
       </script>
     </div>
   <% end %>
+  <div class="chart chart--projects chart--wide">
+    <div class="chart__graph  chart__graph--projects"></div>
+     <script type="text/javascript">
+        var svg = dimple.newSvg(".chart__graph--projects");
+        var data = <%= projects.values.to_json.to_s %>;
+        var chart = new dimple.chart(svg, data);
+        var x = chart.addMeasureAxis("x", "bricks");
+        var y = chart.addCategoryAxis("y", "project");
+        y.addOrderRule("project", "desc");
+        var s = chart.addSeries(null, dimple.plot.bar);
+
+
+        chart.draw();
+        // After drawing we can access the shapes and their associated data
+        // to add labels.
+      </script>
+  </div>
 </section>
+
+
+
+
+
+
+
+
+

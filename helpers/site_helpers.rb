@@ -232,7 +232,7 @@ module SiteHelpers
         :username => employee["username"],
         :goal => employee["goal"],
         :issues => @issues,
-        :bricks => @bricks,
+        :bricks_by_day => @bricks,
         :totalbricks => total_bricks
       }
 
@@ -274,6 +274,33 @@ module SiteHelpers
 
 
     return @totals
+
+  end
+
+  def projects_prep
+
+    @projects = {}
+
+    data.employees.each_with_index do |employee, index|
+
+      employee["issues"].each_with_index do |issue, index|
+
+        if issue["bricks"].nil?
+          issue["bricks"] = 0
+        end
+
+        @project = {
+          :bricks => issue["bricks"],
+          :project => issue["project"]
+        }
+
+        @projects.merge!(index => @project)
+
+      end
+
+    end
+
+    return @projects
 
   end
 
