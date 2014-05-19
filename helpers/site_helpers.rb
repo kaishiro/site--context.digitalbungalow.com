@@ -279,9 +279,11 @@ module SiteHelpers
 
   def projects_prep
 
-    @projects = {}
+    @projects = []
 
     data.employees.each_with_index do |employee, index|
+
+      @issues_array = []
 
       employee["issues"].each_with_index do |issue, index|
 
@@ -289,18 +291,20 @@ module SiteHelpers
           issue["bricks"] = 0
         end
 
-        @project = {
+        @issue = {
           :bricks => issue["bricks"],
           :project => issue["project"]
         }
 
-        @projects.merge!(index => @project)
+        @issues_array << @issue
 
       end
 
+      @tempvar = (@projects << @issues_array).flatten
+
     end
 
-    return @projects
+    return @tempvar
 
   end
 

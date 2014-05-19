@@ -262,13 +262,39 @@ html {
     }
   }
   &.chart--wide {
-    @include span-columns(4);
-    padding:0;
+    @include span-columns(6);
+    @include clearfix;
     .chart__graph {
-      top:5px;
-      left:10px;
+      float:left;
+      position:relative;
+      height:auto;
       bottom:auto;
-      height:125px;
+    }
+  }
+  &.chart--negative {
+    .chart__progress {
+      &.chart__progress--bar {
+        background:#A52A2A;
+      }
+    }
+    .chart__graph {
+      svg rect {
+        fill:#A52A2A;
+        stroke:#A52A2A;
+      }
+    }
+  }
+  &.chart--positive {
+    .chart__progress {
+      &.chart__progress--bar {
+        background:#7BA05B;
+      }
+    }
+    .chart__graph {
+      svg rect {
+        fill:#7BA05B;
+        stroke:#7BA05B;
+      }
     }
   }
 }
@@ -291,7 +317,7 @@ html {
 }
 
 .chart--projects svg {
-  height:125px;
+  height:500px;
   .gridlines {
     display:none;
   }

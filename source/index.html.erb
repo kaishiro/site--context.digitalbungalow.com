@@ -119,7 +119,13 @@
 
 <section class="section section--employees">
   <% employees.each do |index, employee| %>
-    <div class="chart chart--employee">
+    <div class="chart chart--employee
+        <% if ((employee[:totalbricks] / employee[:goal]) * 100) < totals_prep[:progress].round(2) %>
+         chart--negative
+        <% elsif ((employee[:totalbricks] / employee[:goal]) * 100) > totals_prep[:progress].round(2) %>
+         chart--positive
+        <% end %>
+    ">
       <div class="chart__progress chart__progress--bar" style="width:<%= (employee[:totalbricks] / employee[:goal]) * 100 %>%;">
         <div class="chart__progress chart__progress--value">
           <%= ((employee[:totalbricks] / employee[:goal]) * 100).round(2) %>%
@@ -145,11 +151,15 @@
       </script>
     </div>
   <% end %>
+  <br />
+  <br />
+  <br />
   <div class="chart chart--projects chart--wide">
+    <h2 class="chart__heading">Project<em>Bricks</em></h2>
     <div class="chart__graph  chart__graph--projects"></div>
      <script type="text/javascript">
         var svg = dimple.newSvg(".chart__graph--projects");
-        var data = <%= projects.values.to_json.to_s %>;
+        var data = <%= projects.to_json.to_s %>;
         var chart = new dimple.chart(svg, data);
         var x = chart.addMeasureAxis("x", "bricks");
         var y = chart.addCategoryAxis("y", "project");
