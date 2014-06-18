@@ -54,7 +54,7 @@ configure :build do
         puts "(#{Time.now}) Getting #{username.upcase}'s issues..."
 
         # Get user's issues
-        r = Jiralicious.search("owner = \"#{username}\" AND (resolutiondate >= \"#{quarter_start}\" AND resolutiondate <= \"#{quarter_end}\") AND (status = 'Closed' OR status = 'Resolved') AND (resolution = 'Fixed') AND (issuetype != 'Bug (QA)' OR issuetype != 'Rework (Post-QA Bug)')", :max_results=>'2500',:fields=>'customfield_10004,project,issuetype,resolutiondate')
+        r = Jiralicious.search("owner = \"#{username}\" AND (resolutiondate >= \"#{quarter_start}\" AND resolutiondate <= \"#{quarter_end}\") AND (status = 'Closed' OR status = 'Resolved') AND (resolution = 'Fixed') AND (issuetype != \"Bug (QA)\" AND issuetype != \"Rework (Post-QA Bug)\")", :max_results=>'2500',:fields=>'customfield_10004,project,issuetype,issuekey,resolutiondate')
 
         issues_array = []
 
