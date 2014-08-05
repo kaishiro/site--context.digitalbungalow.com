@@ -18,13 +18,6 @@
           "goal": 43
         },
         {
-          "name": "Matthew White",
-          "email": "mwhite@digitalbungalow.com",
-          "department": "Development",
-          "head": false,
-          "goal": 22
-        },
-        {
           "name": "Andrew Wardwell",
           "email": "awardwell@digitalbungalow.com",
           "department": "Development",
@@ -182,6 +175,18 @@
           "department": "Development",
           "head": false,
           "goal": 48
+        }
+      ]
+    },
+    {
+      "location": "Shanghai, China",
+      "employees": [
+        {
+          "name": "Matthew White",
+          "email": "mwhite@digitalbungalow.com",
+          "department": "Development",
+          "head": false,
+          "goal": 43
         }
       ]
     }
