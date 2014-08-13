@@ -54,17 +54,23 @@ configure :build do
         puts "(#{Time.now}) Getting #{username.upcase}'s issues..."
 
         # Get user's issues
-        r = Jiralicious.search("(owner = \"#{username}\") AND (status = 'Review' OR status = 'Stage' OR (status = 'Closed' AND resolutiondate >= \"#{quarter_start}\" AND resolutiondate <= \"#{quarter_end}\")) AND (issuetype != 'Bug')", :max_results=>'2500',:fields=>'customfield_10004,project,issuetype,issuekey,resolutiondate')
+        r = Jiralicious.search("(owner = 'mwhite') AND (status = 'Review' OR status = 'Stage' OR (status = 'Closed' AND resolutiondate >= \"#{quarter_start}\" AND resolutiondate <= \"#{quarter_end}\")) AND (issuetype != 'Bug')", :max_results=>'2500',:fields=>'customfield_10004,project,issuetype,issuekey,resolutiondate')
 
         issues_array = []
 
         r.issues.each do |issue|
 
+          resolution_date = issue["fields"]["resolutiondate"]
+
+          if resolution_date.nil?
+            resolution_date = Date.today().strftime('%Y/%m/%d')
+          end
+
           issue_hash = {
             :bricks => issue["fields"]["customfield_10004"],
             :project => issue["fields"]["project"]["key"],
             :issuetype => issue["fields"]["issuetype"]["name"],
-            :resolutiondate => issue["fields"]["resolutiondate"]
+            :resolutiondate => resolution_date
           }
 
           issues_array << issue_hash
